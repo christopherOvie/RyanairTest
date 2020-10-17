@@ -8,9 +8,11 @@ import java.util.List;
 
 
 public class SearchPage extends CommonPage {
-	
+
+	@FindBy(xpath = "//button[@class='list__clear-selection ry-button--anchor-blue ry-button--anchor'")
+	private WebElementFacade clearSelection;
 	@FindBy(id = "input-button__departure")
-	private WebElementFacade departureTxtField;
+	public WebElementFacade departureTxtField;
 	@FindBy(id = "input-button__destination")
 	private WebElementFacade arrivalTxtField;
 	@FindBy(xpath = "//span[@data-ref='airport-item__name']")
@@ -29,11 +31,10 @@ public class SearchPage extends CommonPage {
 	private WebElementFacade flightInBound;
 	
 	public void selectTravelPlan(String departure, String arrival){
-		
-		departureTxtField.click();
+
 		departureTxtField.sendKeys(departure);
 
-		arrivalTxtField.sendKeys(arrival);
+		awaitVisibility(arrivalTxtField).sendKeys(arrival);
 		arrivalTxtField.deselect();
 
 		activateDate.click();

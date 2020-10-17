@@ -7,9 +7,9 @@ import java.time.Duration;
 import java.util.List;
 
 
-class CommonPage extends PageObject {
+public class CommonPage extends PageObject {
 
-	final static Duration TIME_OUT = Duration.ofSeconds(30);
+	final static Duration TIME_OUT = Duration.ofMillis(5000);
 
 	WebElementFacade awaitVisibility(WebElementFacade facade){
 		return withTimeoutOf(TIME_OUT)

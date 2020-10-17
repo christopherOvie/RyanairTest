@@ -12,7 +12,11 @@ public class SearchFlightSteps extends ScenarioSteps {
 
 	@Given("I enter {string} as departure and {string} as arrival")
 	public void i_enter_as_departure_and_as_arrival(String departure, String arrival) {
+		page.departureTxtField.click();
+		page.departureTxtField.clear();
+
 		page.selectTravelPlan(departure, arrival);
+
 	}
 
 	@And("I selected {string} as departure and {string} as return of travel")
