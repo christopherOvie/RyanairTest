@@ -7,7 +7,6 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 public class SearchFlightSteps extends ScenarioSteps {
 
-
 	private SearchPage page;
 
 	@Given("I enter {string} as departure and {string} as arrival")
