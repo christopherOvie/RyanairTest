@@ -23,13 +23,7 @@ public class SearchPage extends CommonPage {
 	private WebElementFacade searchBtn;
 	@FindBy(className = "counter__button-wrapper--enabled")
 	private List<WebElementFacade> counters;
-	@FindBy(xpath = "//fare-card[@class='fare-card-item__component ng-star-inserted']")
-	private List<WebElementFacade> tickets;
-	@FindBy(xpath = "//flight-card[@data-e2e='flight-card--outbound']")
-	private WebElementFacade flightOutBound;
-	@FindBy(xpath = "//flight-card[@data-e2e='flight-card--inbound']")
-	private WebElementFacade flightInBound;
-	
+
 	public void selectTravelPlan(String departure, String arrival){
 
 		departureTxtField.sendKeys(departure);
@@ -58,13 +52,6 @@ public class SearchPage extends CommonPage {
 			awaitVisibility(counters).get(2).click();
 
 		awaitVisibility(searchBtn).click();
-	}
-
-	public void myFlights() {
-		awaitVisibility(flightOutBound).click();
-		awaitVisibility(tickets).get(0).click();
-		awaitVisibility(flightInBound).click();
-		awaitVisibility(tickets).get(0).click();
 	}
 }
 

@@ -7,6 +7,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 public class SearchFlightSteps extends ScenarioSteps {
 
+
 	private SearchPage page;
 
 	@Given("I enter {string} as departure and {string} as arrival")
@@ -27,12 +28,6 @@ public class SearchFlightSteps extends ScenarioSteps {
 	public void i_select_as_number_of_adults_and_as_number_of_children(String numberOfAdults, String numberOfChildren) {
 
 		page.setNumberOfPassengers(numberOfAdults, numberOfChildren);
-	}
-
-	@And("I choose flights")
-	public void i_choose_flights() {
-
-		page.myFlights();
 	}
 
 }

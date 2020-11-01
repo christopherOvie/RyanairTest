@@ -7,18 +7,18 @@ import java.time.Duration;
 import java.util.List;
 
 
-public class CommonPage extends PageObject {
+class CommonPage extends PageObject {
 
-	final static Duration TIME_OUT = Duration.ofMillis(5000);
+    final static Duration TIME_OUT = Duration.ofSeconds(30);
 
-	WebElementFacade awaitVisibility(WebElementFacade facade){
-		return withTimeoutOf(TIME_OUT)
-				.waitFor(facade);
-	}
+    WebElementFacade awaitVisibility(WebElementFacade facade) {
+        return withTimeoutOf(TIME_OUT)
+                .waitFor(facade);
+    }
 
-	List<WebElementFacade> awaitVisibility(List<WebElementFacade> facades){
-		return withTimeoutOf(TIME_OUT)
-				.waitFor(facades);
-	}
+    List<WebElementFacade> awaitVisibility(List<WebElementFacade> facades) {
+        return withTimeoutOf(TIME_OUT)
+                .waitFor(facades);
+    }
 
 }
